@@ -1,0 +1,7 @@
+spring:
+  application:
+      name: jooq-demo
+  datasource:
+    url: jdbc:postgresql://localhost:7654/jooq_db
+    username: jooq_user
+    password: sql

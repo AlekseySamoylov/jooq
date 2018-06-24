@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - preConditions:
+    - runningAs:
+        username: jooq_user
+  - changeSet:
+      id: 1
+      author: Aleksey Samoylov
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: firstname
+                  type: varchar(50)
+              - column:
+                  name: lastname
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: Aleksey Samoylov
+      changes:
+      - insert:
+               tableName: user
+               columns:
+               - column:
+                   name: firstname
+                   value: "Aleksey"
+               - column:
+                   name: lastname
+                   value: "Samoylov"
+  - changeSet:
+      id: 3
+      author: Aleksey Samoylov
+      changes:
+      - insert:
+               tableName: user
+               columns:
+               - column:
+                   name: firstname
+                   value: "John"
+               - column:
+                   name: lastname
+                   value: "Smith"
